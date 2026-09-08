@@ -1,0 +1,65 @@
+HEROES = {
+    "Batman": {
+        "id" : 1,
+        "identite_secrete": "Bruce Wayne",
+        "pouvoir": "Intelligence, arts martiaux, gadgets technologiques",
+        "univers": "DC Comics",
+        "rank":32,
+    },
+    "Superman": {
+        "id" : 2,
+        "identite_secrete": "Clark Kent",
+        "pouvoir": "Force surhumaine, vol, vision thermique, invulnérabilité",
+        "univers": "DC Comics",
+        "rank":52,
+    },
+    "Spider-Man": {
+        "id" : 3,
+        "identite_secrete": "Peter Parker",
+        "pouvoir": "Agilité, sens de l'araignée, projection de toiles",
+        "univers": "Marvel",
+        "rank":62,
+    },
+    "Iron Man": {
+        "id" : 4,
+        "identite_secrete": "Tony Stark",
+        "pouvoir": "Armure high-tech, génie scientifique",
+        "univers": "Marvel",
+        "rank":72,
+    },
+    "Wonder Woman": {
+        "id" : 5,
+        "identite_secrete": "Diana Prince",
+        "pouvoir": "Force divine, vol, lasso de la vérité",
+        "univers": "DC Comics",
+        "rank":80,
+    },
+    "Thor": {
+        "id" : 6,
+        "identite_secrete": "Thor Odinson",
+        "pouvoir": "Contrôle de la foudre, marteau Mjolnir",
+        "univers": "Marvel / Mythologie nordique",
+        "rank":27,
+    },
+    "Luffy": {
+        "id" : 7,
+        "identite_secrete": "Monkey D. Luffy",
+        "pouvoir": "Corps élastique (Fruit du Démon), Haki",
+        "univers": "One Piece",
+        "rank":22,
+    },
+    "Goku": {
+        "id" : 8,
+        "identite_secrete": "Son Goku",
+        "pouvoir": "Arts martiaux, Kamehameha, transformations Saiyan",
+        "univers": "Dragon Ball",
+        "rank":22,
+    },
+    "Naruto": {
+        "id" : 9,
+        "identite_secrete": "Naruto Uzumaki",
+        "pouvoir": "Ninjutsu, Rasengan, mode ermite, démon renard à 9 queues",
+        "univers": "Naruto",
+        "rank":82,
+    }
+}
