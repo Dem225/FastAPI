@@ -1,65 +1,50 @@
-HEROES = {
-    "Batman": {
-        "id" : 1,
-        "identite_secrete": "Bruce Wayne",
-        "pouvoir": "Intelligence, arts martiaux, gadgets technologiques",
-        "univers": "DC Comics",
-        "rank":32,
-    },
-    "Superman": {
-        "id" : 2,
-        "identite_secrete": "Clark Kent",
-        "pouvoir": "Force surhumaine, vol, vision thermique, invulnérabilité",
-        "univers": "DC Comics",
-        "rank":52,
-    },
-    "Spider-Man": {
-        "id" : 3,
-        "identite_secrete": "Peter Parker",
-        "pouvoir": "Agilité, sens de l'araignée, projection de toiles",
-        "univers": "Marvel",
-        "rank":62,
-    },
-    "Iron Man": {
-        "id" : 4,
-        "identite_secrete": "Tony Stark",
-        "pouvoir": "Armure high-tech, génie scientifique",
-        "univers": "Marvel",
-        "rank":72,
-    },
-    "Wonder Woman": {
-        "id" : 5,
-        "identite_secrete": "Diana Prince",
-        "pouvoir": "Force divine, vol, lasso de la vérité",
-        "univers": "DC Comics",
-        "rank":80,
-    },
-    "Thor": {
-        "id" : 6,
-        "identite_secrete": "Thor Odinson",
-        "pouvoir": "Contrôle de la foudre, marteau Mjolnir",
-        "univers": "Marvel / Mythologie nordique",
-        "rank":27,
-    },
-    "Luffy": {
-        "id" : 7,
-        "identite_secrete": "Monkey D. Luffy",
-        "pouvoir": "Corps élastique (Fruit du Démon), Haki",
-        "univers": "One Piece",
-        "rank":22,
-    },
-    "Goku": {
-        "id" : 8,
-        "identite_secrete": "Son Goku",
-        "pouvoir": "Arts martiaux, Kamehameha, transformations Saiyan",
-        "univers": "Dragon Ball",
-        "rank":22,
-    },
-    "Naruto": {
-        "id" : 9,
-        "identite_secrete": "Naruto Uzumaki",
-        "pouvoir": "Ninjutsu, Rasengan, mode ermite, démon renard à 9 queues",
-        "univers": "Naruto",
-        "rank":82,
-    }
-}
+from typing import List
+from classe import Hero
+import csv
+HEROES: List[Hero] = [
+    Hero(
+        id=1,
+        nik_name="Zebi",
+        full_name="wilsonne",
+        occupation=["Mizard", "adventurer", "Deity"],
+        power=["Magical prowess", "Charisma"],
+        hobby=["studying magic", "cooking"],
+        type="wizard",
+        rank=54
+    ),
+
+]
+
+#CREATE A CSV FILLE FROM THE ABOVE
+def format_array(py_list):
+    return '{' + ' , '.join(f'"{item}"' for item in py_list) + '}'
+
+
+with open("heroes.csv", "w", newline="", encoding="utf-8") as f:
+    writer = csv.writer(f)
+
+    # Header
+    writer.writerow([
+        "nik_name",
+        "full_name",
+        "occupation",
+        "power",
+        "hobby",
+        "type",
+        "rank"
+    ])
+
+    # Data
+    for hero in HEROES:
+        
+        writer.writerow([
+            hero.nik_name,
+            hero.full_name,
+            format_array(hero.occupation),
+            hero.power,
+            format_array(hero.hobby),
+            hero.type,
+            hero.rank
+        ])
+
+

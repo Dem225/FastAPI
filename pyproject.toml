@@ -11,7 +11,9 @@ dependencies = [
     "beautifulsoup4>=4.15.0",
     "fastapi[standard]>=0.141.1",
     "path>=17.1.1",
+    "psycopg2-binary>=2.9.13",
     "requests>=2.34.2",
+    "sqlalchemy>=2.0.54",
 ]
 
 [project.scripts]
