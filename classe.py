@@ -1,5 +1,5 @@
-from typing import List , Optional
-from  pydantic import BaseModel, Field , constr 
+from typing import List , Optional , Literal 
+from  pydantic import BaseModel, Field , constr  , field_validator 
 
 class Hero:
     id:int
@@ -45,7 +45,18 @@ class HeroValidation(BaseModel):
              }
         }
 
-
+AllowedRoles= Literal["controller" , "defender" , "leader","striker"]
+class PlayserValidation(BaseModel):
+     email:str =Field(description="Email address")
+     username: str =Field(description="pseudo")
+     frist_name: str=Field(description="frist name")
+     last_name:str =Field(description="family name")
+     password : str =Field(description="password")
+     role:AllowedRoles =Field(description="Role of the plyer . should be either controller , defender , leader or striker ")
+     @field_validator(field:"role" , mode="before")
+     @classmethod
+     def lower_case_role(cls, val:str)-> str:
+          return val.lower()
 
 
 
